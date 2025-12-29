@@ -1,6 +1,35 @@
+/* Import Tailwind v4 */
 @import "tailwindcss";
 
-body {
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&display=swap');
+
+/* Global font settings */
+/* body {
+ 
+
+
+  background: linear-gradient(135deg, #E4EEFF, #7D99FF);
+} */
+
+
+h1, h2, h3, h4, h5{
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, sans-serif;
 }
+
+p {
+  font-family: "Manrope", sans-serif;
+}
+
+a, li {
+  font-family: "Roboto", sans-serif;
+}
+button {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, sans-serif;
+}
+h6 {
+  font-family: "Playfair Display", serif;
+}
+

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-scroll";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,6 +17,7 @@ function Header() {
   };
 
   return (
+    <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
@@ -49,39 +51,51 @@ function Header() {
           </button>
 
      {/* Desktop Navigation */}
-<nav className="hidden md:flex items-center gap-10">
-  <button
-    onClick={() => scrollToSection("home")}
-    className="font-semibold font-poppins text-gray-700 hover:text-indigo-600 transition-colors"
-  >
-    Home
-  </button>
+ <nav className="hidden md:flex items-center gap-10">
+      <Link
+        to="home"
+        smooth={true}
+        duration={500}
+        offset={-80}
+        className="cursor-pointer text-left font-semibold py-3 px-3 rounded-xl hover:blur-[2px] hover:text-blue-600 hover:scale-110 transition"
+      >
+        Home
+      </Link>
 
-  <button
-    onClick={() => scrollToSection("features")}
-    className="font-semibold text-gray-700 hover:text-indigo-600 transition-colors"
-  >
-    Features
-  </button>
+      <Link
+        to="features"
+        smooth={true}
+        duration={500}
+        offset={-80}
+        className="cursor-pointer text-left font-semibold py-3 px-3 rounded-xl hover:blur-[2px] hover:text-blue-600 hover:scale-110 transition"
+      >
+        Features
+      </Link>
 
-  <button
-    onClick={() => scrollToSection("about")}
-    className="font-semibold text-gray-700 hover:text-indigo-600 transition-colors"
-  >
-    About
-  </button>
+      <Link
+        to="about"
+        smooth={true}
+        duration={500}
+        offset={-80}
+        className="cursor-pointer text-left font-semibold py-3 px-3 rounded-xl hover:blur-[2px] hover:text-blue-600 hover:scale-110 transition"
+      >
+        About
+      </Link>
 
-  <button
-    onClick={() => scrollToSection("contact")}
-    className="font-semibold text-gray-700 hover:text-indigo-600 transition-colors"
-  >
-    Contact
-  </button>
-</nav>
+      <Link
+        to="contact"
+        smooth={true}
+        duration={500}
+        offset={-80}
+        className="cursor-pointer text-left font-semibold py-3 px-3 rounded-xl hover:blur-[2px] hover:text-blue-600 hover:scale-110 transition"
+      >
+        Contact
+      </Link>
+    </nav>
 
           <div className="hidden md:block">
-<button class="
-   overflow-hidden py-3 px-6 rounded-full text-white
+<a href="#" class="
+   overflow-hidden py-4 px-6 rounded-full text-white
   transition-all duration-700 ease-in-out
   bg-linear-to-b from-[#333a99] via-[#3a48b0] 
   bg-[length:100%_200%] bg-top
@@ -89,7 +103,7 @@ function Header() {
   hover:shadow-[0_0_0px_rgba(59,85,360,0.9)]
   active:scale-0">
   Download App
-</button>
+</a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -121,12 +135,13 @@ function Header() {
     {isMobileMenuOpen && (
 <div className="md:hidden mt-4 rounded-3xl backdrop-blur-xl bg-white/50 shadow-xl p-6 border border-white/20">
     <nav className="flex flex-col gap-4 ">
-      <button
-        onClick={() => scrollToSection("home")}
-        className="text-left font-semibold py-3 px-4 rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition"
-      >
-        Home
-      </button>
+  <button
+  onClick={() => scrollToSection("home")}
+  className="text-left font-semibold py-3 px-4 rounded-xl hover:blur-[2px] hover:text-blue-600 hover:scale-110 transition"
+>
+  Home
+</button>
+
 
       <button
         onClick={() => scrollToSection("features")}
@@ -153,6 +168,7 @@ function Header() {
 )}
       </div>
     </header>
+    </>
   );
 }
 
