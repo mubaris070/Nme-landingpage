@@ -23,7 +23,7 @@ function About(){
                 w-30 h-30 md:w-44 md:h-44
                 overflow-hidden rounded-full
                 border-4 border-white shadow-xl
-                bg-lenear-to-br from-[#E4EEFF] to-[#7D99FF]
+                bg-linear-to-br from-[#E4EEFF] to-[#7D99FF]
                 flex items-center justify-center">
   <img 
     src="nmeblack.png" 
