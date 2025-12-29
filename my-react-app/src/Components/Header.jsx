@@ -8,29 +8,25 @@ function Header() {
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-    setIsMobileMenuOpen(false);
-  };
 
   return (
     <>
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? "backdrop-blur-xl bg-white/70 shadow-lg"
+          ? "backdrop-blur-xl md:bg-white/70 shadow-lg"
           : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           
-          {/* Logo */}
-          <button
-            onClick={() => scrollToSection("home")}
+          <Link to="home"
+          smooth={true}
+          duration={500}
+            offset={-80}
             className="flex items-center gap-3 group"
           >
           <a href="#">
@@ -48,9 +44,7 @@ function Header() {
     "
   />
 </a>
-          </button>
-
-     {/* Desktop Navigation */}
+          </Link>
  <nav className="hidden md:flex items-center gap-10">
       <Link
         to="home"
@@ -66,7 +60,7 @@ function Header() {
         to="features"
         smooth={true}
         duration={500}
-        offset={-80}
+        offset={-90}
         className="cursor-pointer text-left font-semibold py-3 px-3 rounded-xl hover:blur-[2px] hover:text-blue-600 hover:scale-110 transition"
       >
         Features
@@ -106,24 +100,23 @@ function Header() {
 </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden p-2 rounded-xl hover:bg-black/5 transition"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             <div className="flex flex-col gap-1.5">
               <span
-                className={`w-6 h-0.5 bg-gray-900 transition ${
+                className={`w-6 h-1 bg-gray-900 transition ${
                   isMobileMenuOpen && "rotate-45 translate-y-2"
                 }`}
               />
               <span
-                className={`w-6 h-0.5 bg-gray-900 transition ${
+                className={`w-6 h-1 bg-gray-900 transition ${
                   isMobileMenuOpen && "opacity-0"
                 }`}
               />
               <span
-                className={`w-6 h-0.5 bg-gray-900 transition ${
+                className={`w-6 h-1 bg-gray-900 transition ${
                   isMobileMenuOpen && "-rotate-45 -translate-y-2"
                 }`}
               />
@@ -131,41 +124,66 @@ function Header() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
-    {isMobileMenuOpen && (
-<div className="md:hidden mt-4 rounded-3xl backdrop-blur-xl bg-white/50 shadow-xl p-6 border border-white/20">
-    <nav className="flex flex-col gap-4 ">
-  <button
-  onClick={() => scrollToSection("home")}
-  className="text-left font-semibold py-3 px-4 rounded-xl hover:blur-[2px] hover:text-blue-600 hover:scale-110 transition"
+<div
+  className={`md:hidden mt-3 rounded-3xl backdrop-blur-xl bg-white/50 shadow-xl border border-white/20
+    overflow-hidden
+    transition-all duration-300 ease-in-out
+    ${isMobileMenuOpen ? "max-h-[300px] opacity-100" : "max-h-0 opacity-0"}
+  `}
 >
-  Home
-</button>
+<nav className="flex flex-col gap-4">
+  <Link
+    to="home"
+    smooth={true}
+    duration={500}
+    offset={-80}
+    onClick={() => setIsMobileMenuOpen(false)}
+    className="cursor-pointer text-left font-semibold py-3 px-3 rounded-xl
+      transition transform active:scale-105 active:text-blue-600 "
+  >
+    Home
+  </Link>
+
+  <Link
+    to="features"
+    smooth={true}
+    duration={500}
+    offset={-90}
+    onClick={() => setIsMobileMenuOpen(false)}
+    className="cursor-pointer text-left font-semibold py-3 px-3 rounded-xl
+      transition transform active:scale-105 active:text-blue-600"
+  >
+    Features
+  </Link>
+
+  <Link
+    to="about"
+    smooth={true}
+    duration={500}
+    offset={-80}
+    onClick={() => setIsMobileMenuOpen(false)}
+    className="cursor-pointer text-left font-semibold py-3 px-3 rounded-xl
+      transition transform active:scale-105 active:text-blue-600"
+  >
+    About
+  </Link>
+
+  <Link
+    to="contact"
+    smooth={true}
+    duration={500}
+    offset={-80}
+    onClick={() => setIsMobileMenuOpen(false)}
+    className="cursor-pointer text-left font-semibold py-3 px-3 rounded-xl
+      transition transform active:scale-105 active:text-blue-600"
+  >
+    Contact
+  </Link>
+</nav>
+
+</div>
 
 
-      <button
-        onClick={() => scrollToSection("features")}
-        className="text-left font-semibold py-3 px-4 rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition"
-      >
-        Features
-      </button>
-
-      <button
-        onClick={() => scrollToSection("about")}
-        className="text-left font-semibold py-3 px-4 rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition"
-      >
-        About
-      </button>
-
-      <button
-        onClick={() => scrollToSection("contact")}
-        className="text-left font-semibold py-3 px-4 rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition"
-      >
-        Contact
-      </button>
-    </nav>
-  </div>
-)}
       </div>
     </header>
     </>

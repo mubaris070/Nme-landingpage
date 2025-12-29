@@ -153,7 +153,6 @@ function submit(e){
 
   <div className='flex flex-col mt-30'>
 
-  {/* Badge / Label */}
   <p className="relative font-bold text-[20px] text-gray-800 w-fit mb-6">
     Get In Touch
 

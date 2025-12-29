@@ -42,10 +42,6 @@ function About(){
           />
         </div>
 
-        <svg className="absolute -left-10 top-16 text-emerald-500 w-24 h-24 -z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 4c0 1.105 4.477 2 10 2s10-.895 10-2" />
-        </svg>
-
             <svg 
     viewBox="0 0 100 100" 
     className="absolute right-14 top-134 w-24 h-24 transform rotate-180"

@@ -1,16 +1,10 @@
-/* Import Tailwind v4 */
 @import "tailwindcss";
 
-/* Import Google Fonts */
+
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&display=swap');
 
-/* Global font settings */
-/* body {
- 
 
 
-  background: linear-gradient(135deg, #E4EEFF, #7D99FF);
-} */
 
 
 h1, h2, h3, h4, h5{
