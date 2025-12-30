@@ -28,7 +28,7 @@ function About(){
   <img 
     src="nmeblack.png" 
     alt="Traveler"
-    className="w-[100px] h-[100px] object-contain"
+    className="w-[70px] md:w-[100px] h-[70px] md:h-[100px] object-contain"
   />
 </div>
 
@@ -44,7 +44,7 @@ function About(){
 
             <svg 
     viewBox="0 0 100 100" 
-    className="absolute right-14 top-134 w-24 h-24 transform rotate-180"
+    className="absolute -right-7 md:right-14 top-97 md:top-114 w-14 md:w-24 h-14 md:h-24 transform rotate-180"
     fill="none" 
   >
     <path 
@@ -79,12 +79,12 @@ function About(){
     </p>
 
         
-        <h1 className="text-2xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-normal">
          All Your Important Things  <br /> 
           <span className="text-blue-500">One Smart App.</span>
         </h1>
         
-        <p className="text-gray-600 text-lg leading-relaxed max-w-md mb-8">
+        <p className="text-gray-700 text-lg leading-relaxed max-w-md mb-8">
           “NME is a smart local search app designed to simplify your everyday needs.
            Whether you want to find a service or promote your business,
            NME connects you with trusted professionals in your city.”

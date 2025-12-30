@@ -79,7 +79,7 @@ function submit(e){
   return (
     <Element name='contact'>
     <div className="font-sans text-gray-900  ">
-      <section className="bg-[#1f2131]  pt-16 pb-40 px-6 text-center  text-white relative">
+      <section className="bg-[#1f2131] h-[1100px] md:h-auto  pt-16 pb-40 px-6 text-center  text-white relative">
         <div className="max-w-4xl mx-auto mb-16">
           <div className="flex items-center justify-center gap-2  mb-4">
   <p
@@ -104,13 +104,13 @@ function submit(e){
     </svg>
   </p>          </div>
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">Get In Touch</h1>
-          <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-gray-300 max-w-2xl mx-auto leading-relaxed">
             Let's connect! Whether it's feedback, inquries, or collabaration ideas, <br />
             <span>we'd love to hear from you</span>
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 absolute left-0 right-0 -bottom-32 px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 absolute left-0 top-80 md:right-0 -bottom-32 px-6">
           {offices.map((office, idx) => (
             <div key={idx} className="bg-white rounded-2xl p-8 shadow-xl text-left text-gray-800 border border-gray-100">
               <h3 className="text-xl font-bold mb-6">{office.city} Office</h3>
@@ -135,9 +135,15 @@ function submit(e){
           ))}
         </div>
       </section>
-
 <section
-  className="flex flex-col md:flex-row gap-20 pl-[230px] pt-[220px] pb-[100px]"
+  className="
+    flex flex-col md:flex-row
+    gap-16 md:gap-20
+    px-4 md:px-0
+    md:pl-[230px]
+    pt-34 md:pt-[220px]
+    pb-[100px]
+  "
   style={{
     backgroundImage: `
       radial-gradient(circle at center center, transparent, rgb(255,255,255)),
@@ -150,38 +156,49 @@ function submit(e){
     `,
   }}
 >
+  {/* LEFT CONTENT */}
+  <div className="flex flex-col mt-6 md:mt-16 items-center md:items-start text-center md:text-left">
 
-  <div className='flex flex-col mt-30'>
+    <p className="relative font-bold text-center md:text-[20px] text-gray-800 w-fit mb-4">
+      Get In Touch
 
-  <p className="relative font-bold text-[20px] text-gray-800 w-fit mb-6">
-    Get In Touch
+      <svg
+        viewBox="0 0 100 100"
+        className="absolute top-0 right-2 w-16 h-16 md:w-24 md:h-20 rotate-45"
+        fill="none"
+        aria-hidden="true"
+      >
+        <path
+          d="M20,80 Q50,20 90,10"
+          className="stroke-blue-400"
+          strokeWidth="4"
+          strokeLinecap="round"
+        />
+      </svg>
+    </p>
 
-    <svg
-      viewBox="0 0 100 100"
-      className="absolute top-1 right-4 w-24 h-20 rotate-45"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M20,80 Q50,20 90,10"
-        className="stroke-blue-400"
-        strokeWidth="4"
-        strokeLinecap="round"
-      />
-    </svg>
-  </p>
-
-
-  <h6 className="text-3xl md:text-4xl font-heading font-bold text-gray-900 mb-4">
+<h6 className="text-2xl md:text-4xl font-heading font-bold text-gray-900 mb-3 text-center md:text-left">
+  <span className="md:hidden">
+    Feel Free to <span className="text-blue-500">Contact</span> <span className="text-blue-500"><br />With Us</span>
+  </span>
+  <span className="hidden md:block">
     Feel Free to <br />
     <span className="text-blue-500">Contact With Us</span>
-  </h6>
+  </span>
+</h6>
 
-  <p className="text-gray-500 max-w-2xl leading-relaxed">
-    Let's connect! Whether it's feedback, inquiries, 
-    <br />
-    <span>or collaboration ideas,we'd love to hear from you.</span>
-  </p>
+
+    <p className="text-sm md:text-base text-gray-500 max-w-xl leading-relaxed">
+      Let's connect! Whether it's feedback, inquiries
+      <span className="hidden md:inline">
+        <br />
+        or collaboration ideas, we'd love to hear from you.
+      </span>
+      <span className="md:hidden">
+        {" "}or collaboration ideas, we'd love to hear from you.
+      </span>
+    </p>
+
   </div>
 
 
